@@ -16,9 +16,16 @@ import { MobileService } from './mobile.service';
 export class MobileController {
   constructor(private readonly mobileService: MobileService) {}
 
+  // api/v2/mobile/lessons
   @Get('lessons')
   loadLessons(@Query('date') date: string, @Query('end') end: string) {
     return this.mobileService.loadLessons(date, end);
+  }
+
+  // GET api/v2/mobile/lessons/:lessonId/detail
+  @Get('lessons/:lessonId/detail')
+  loadLessonDetail(@Param('lessonId') lessonId: string) {
+    return this.mobileService.loadLessonDetail(lessonId);
   }
 
   @Post()

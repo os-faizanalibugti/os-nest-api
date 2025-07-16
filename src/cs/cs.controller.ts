@@ -2,7 +2,7 @@ import { Controller, Get, Param, Query } from '@nestjs/common';
 import { CsService } from './cs.service';
 import { of } from 'rxjs';
 
-@Controller('v2/cs')
+@Controller('v2')
 export class CsController {
   constructor(private readonly csService: CsService) {}
 
